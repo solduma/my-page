@@ -63,10 +63,6 @@ export default {
   build: {
   },
   server: {
-    https: {
-      key: fs.readFileSync(path.resolve('/etc/lego/certificates/il-jo.com.key')),
-      cert: fs.readFileSync(path.resolve('/etc/lego/certificates/il-jo.com.crt'))
-    },
     port: 4001 // default: 3000
   },
   telemetry: false
