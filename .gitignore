@@ -106,3 +106,4 @@ dist
 # SSL Keys
 server.crt
 server.key
+ca.crt
