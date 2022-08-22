@@ -60,6 +60,7 @@ export default {
   build: {
   },
   server: {
+    host: '192.168.0.109',
     port: 4001 // default: 3000
   },
   telemetry: false
