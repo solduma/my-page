@@ -63,7 +63,11 @@ export default {
   build: {
   },
   server: {
-    port: 4001 // default: 3000
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'private.key')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'certificate.crt'))
+    },
+    port: 4002 // default: 3000
   },
   telemetry: false
 }
