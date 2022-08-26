@@ -72,7 +72,7 @@ export default {
   build: {
   },
   server: {
-    port: 4002 // default: 3000
+    port: 4002
   },
   telemetry: false
 }
