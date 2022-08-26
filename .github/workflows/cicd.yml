@@ -17,6 +17,7 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
-              source ~/.bash_profile 
+              cd /volume1/homes/solduma
+              source .bash_profile 
               cd /var/services/homes/solduma/my-page
               git status
