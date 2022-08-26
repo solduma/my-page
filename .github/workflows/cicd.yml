@@ -16,5 +16,5 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
+              cd /var/services/homes/solduma/my-page
               pwd
-              
