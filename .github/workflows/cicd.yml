@@ -20,11 +20,13 @@ jobs:
               cd /volume1/homes/solduma
               source ./.bash_profile 
               cd /var/services/homes/solduma/my-page
-              sudo su -c git checkout main
-              sudo su -c git fetch --all
-              sudo su -c git reset --hard origin/main
-              sudo su -c pm2 kill
+              sudo su
+              ${{ secrets.USER_PASSWORD }}
+              git checkout main
+              git fetch --all
+              git reset --hard origin/main
+              pm2 kill
               cd frontend
-              sudo su -c npm install
-              sudo su -c npm run build
-              sudo su -c pm2 start npm -- start
+              npm install
+              npm run build
+              pm2 start npm -- start
