@@ -17,4 +17,4 @@ jobs:
             script: |
               whoami
               cd /var/services/homes/solduma/my-page
-              pwd
+              git status
