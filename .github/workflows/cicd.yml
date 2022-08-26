@@ -17,12 +17,16 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
+              echo SSH Connection Created
               cd /var/services/homes/solduma/my-page
+              echo Pulling Git
               git checkout main
               git fetch --all
               git reset --hard origin/main
+              echo Killing Pids
               pm2 kill
               cd frontend
               npm install
+              echo Building
               npm run build
               pm2 start npm -- start
