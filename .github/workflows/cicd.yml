@@ -21,10 +21,8 @@ jobs:
               /opt/bin/git checkout main
               /opt/bin/git fetch --all
               /opt/bin/git reset --hard origin/main
-              echo Killing Pids
-              pm2 kill
+              /usr/local/bin/pm2 kill
               cd frontend
-              npm install
-              echo Building
-              npm run build
-              pm2 start npm -- start
+              /usr/local/bin/npm install
+              /usr/local/bin/npm run build
+              /usr/local/bin/pm2 start /usr/local/bin/npm -- start
