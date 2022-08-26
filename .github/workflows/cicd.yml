@@ -16,5 +16,5 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
-              git status
+              pwd
               
