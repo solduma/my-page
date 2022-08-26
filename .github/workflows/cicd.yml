@@ -14,5 +14,7 @@ jobs:
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.USER_NAME}}
             password: ${{ secrets.USER_PASSWORD }}
-            script: whoami
+            script: |
+              whoami
+              git status
               
