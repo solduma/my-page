@@ -7,7 +7,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Run deployment scripts on Synology Nas
         uses: appleboy/ssh-action@master
         with:
@@ -15,18 +14,5 @@ jobs:
             port: ${{ secrets.SSH_PORT }}
             username: ${{ secrets.USER_NAME}}
             password: ${{ secrets.USER_PASSWORD }}
-            script: |
-              whoami
-              echo SSH Connection Created
-              cd /var/services/homes/solduma/my-page
-              echo Pulling Git
-              git checkout main
-              git fetch --all
-              git reset --hard origin/main
-              echo Killing Pids
-              pm2 kill
-              cd frontend
-              npm install
-              echo Building
-              npm run build
-              pm2 start npm -- start
+            script: whoami
+              
