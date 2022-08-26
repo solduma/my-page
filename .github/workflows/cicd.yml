@@ -10,26 +10,6 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      # 1. Repo Checkout
-      - name: Checkout source code
-        uses: actions/checkout@main
-      # 2. node.js Env Setup
-      - name: Set up Node.js
-        uses: actions/setup-node@main
-        with:
-          node-version: 16.x
-      # 3. Package Installation
-      - name: Install dependencies
-        run: npm install
-      # 4. Test
-      # - name: Test unit
-      #   run: npm run test:unit
-      # 5. Build
-      - name: Build Page
-        run: npm run build
-        env:
-          NODE_ENV: production
-      # 6. Deploy
       - uses: actions/checkout@v2
       - name: Run deployment scripts on AWS Lightsail
         uses: appleboy/ssh-action@master
