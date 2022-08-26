@@ -12,9 +12,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
             host: ${{ secrets.HOST_NAME }}
-            username: ${{ secrets.USER_NAME}}
-            key: ${{ secrets.SSH_KEY }}
             port: ${{ secrets.SSH_PORT }}
+            username: ${{ secrets.USER_NAME}}
+            password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
               cd /var/services/homes/solduma/my-page
