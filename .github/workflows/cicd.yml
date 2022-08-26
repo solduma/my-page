@@ -17,12 +17,6 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
+              source ~/.bash_profile 
               cd /var/services/homes/solduma/my-page
-              /opt/bin/git checkout main
-              /opt/bin/git fetch --all
-              /opt/bin/git reset --hard origin/main
-              /usr/local/bin/pm2 kill
-              cd frontend
-              /usr/local/bin/npm install
-              /usr/local/bin/npm run build
-              /usr/local/bin/pm2 start /usr/local/bin/npm -- start
+              git status
