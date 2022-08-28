@@ -9,10 +9,10 @@ git reset --hard origin/main
 cd /var/services/homes/solduma/my-page/frontend
 
 echo "Install dependencies"
-sudo npm i
+npm i
 
 echo "Build app"
-sudo npm run build
+npm run build
 
 echo "Run app"
-sudo pm2 run --name frontend npm -- start
+pm2 run --name frontend npm -- start
