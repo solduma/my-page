@@ -15,5 +15,5 @@ jobs:
             username: ${{ secrets.USER_NAME}}
             password: ${{ secrets.USER_PASSWORD }}
             script: |
-              /volume1/homes/solduma.bash_profile 
+              source /volume1/homes/solduma/.bash_profile 
               bash /var/services/homes/solduma/my-page/frontend/deploy.sh
