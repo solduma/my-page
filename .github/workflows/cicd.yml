@@ -17,4 +17,4 @@ jobs:
             script: |
               whoami
               source /volume1/homes/solduma/.bash_profile 
-              bash /var/services/homes/solduma/my-page/frontend/deploy.sh
+              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S bash /var/services/homes/solduma/my-page/frontend/deploy.sh
