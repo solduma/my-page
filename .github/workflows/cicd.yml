@@ -7,7 +7,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Run deployment scripts on Synology Nas
         uses: appleboy/ssh-action@master
         with:
@@ -16,15 +15,5 @@ jobs:
             username: ${{ secrets.USER_NAME}}
             password: ${{ secrets.USER_PASSWORD }}
             script: |
-              whoami
-              cd /volume1/homes/solduma
-              source ./.bash_profile 
-              cd /var/services/homes/solduma/my-page
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S git checkout main
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S git fetch --all
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S git reset --hard origin/main
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S pm2 kill
-              cd frontend
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S npm install
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S npm run build
-              echo -n ${{ secrets.USER_PASSWORD }} | sudo -S pm2 start npm -- start
+              /volume1/homes/solduma.bash_profile 
+              bash /var/services/homes/solduma/my-page/frontend/deploy.sh
