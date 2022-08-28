@@ -17,7 +17,7 @@ jobs:
             password: ${{ secrets.USER_PASSWORD }}
             script: |
               whoami
-              source /volume1/homes/solduma/ash_profile 
+              source /volume1/homes/solduma/bash_profile 
               cd /var/services/homes/solduma/my-page
               echo -n ${{ secrets.USER_PASSWORD }} | sudo -S git checkout main
               echo -n ${{ secrets.USER_PASSWORD }} | sudo -S git fetch --all
