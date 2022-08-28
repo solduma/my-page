@@ -15,4 +15,4 @@ echo "Build app"
 npm run build
 
 echo "Run app"
-pm2 run --name frontend npm -- start
+pm2 start --name frontend npm -- start
