@@ -1,6 +1,6 @@
 echo "Kill all PM2 pids"
-sudo pm2 list
-sudo pm2 kill
+pm2 list
+pm2 kill
 cd /var/services/homes/solduma/my-page
 
 echo "Update app"
