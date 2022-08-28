@@ -8,8 +8,11 @@
         <li><b>University of Illinois at Urbana-Champaign</b></li>
         <br />
         <li v-if="isOnMobile">M.C.S. in Data Science</li>
-        <li>B.Sc. in Accountancy (Honor)</li>
-        <li>B.Sc. in Finance (Honor)</li>
+        <li v-else>Master of Computer Science in Data Science</li>
+        <li v-if="isOnMobile">B.Sc. in Accountancy (Honor)</li>
+        <li v-else>Bachelor of Science in Accountancy (Honor)</li>
+        <li v-if="isOnMobile">B.Sc. in Finance (Honor)</li>
+        <li v-else>Bachelor of Science in Finance (Honor)</li>
         <li>Minor in Computer Science</li>
       </ul>
     </div>
