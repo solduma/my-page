@@ -2,7 +2,7 @@
   <div>
     <h2>Education</h2>
     <br />
-    <div class="aboutWrapper" :style="style">
+    <div class="aboutWrapper">
       <img src="../assets/img/chief.png" alt="Illinois Chief Logo" />
       <ul>
         <li><b>University of Illinois at Urbana-Champaign</b></li>
@@ -21,7 +21,7 @@
     <br />
     <h2>Employment</h2>
     <br />
-    <div class="aboutWrapper" :style="style">
+    <div class="aboutWrapper">
       <ul>
         <li>2021-Current</li>
       </ul>
@@ -31,7 +31,7 @@
         <li>Recommender System for Banner Ads on 3rd-Party Sites</li>
       </ul>
     </div>
-    <div class="aboutWrapper" :style="style">
+    <div class="aboutWrapper">
       <ul>
         <li>2017-2021</li>
       </ul>
@@ -52,7 +52,7 @@
         <li>Emart – Demand Forecasting of Fresh Foods</li>
       </ul>
     </div>
-    <div class="aboutWrapper" :style="style">
+    <div class="aboutWrapper">
       <ul>
         <li>2014-2017</li>
       </ul>
@@ -62,7 +62,7 @@
         <li>Development of Fair-value Assessment System</li>
       </ul>
     </div>
-    <div class="aboutWrapper" :style="style">
+    <div class="aboutWrapper">
       <ul>
         <li>2012-2013</li>
       </ul>
@@ -81,7 +81,6 @@
       v-for="skill in skills"
       :key="skill.type"
       class="skillWrapper"
-      :style="style"
     >
       <p>{{ skill.type }}</p>
       <ul>
@@ -112,27 +111,8 @@ export default defineComponent({
   layout: "MainLayout",
   data() {
     return {
-      isOnMobile: false,
       skills: badges,
     };
-  },
-  mounted() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize);
-  },
-  methods: {
-    onResize() {
-      if (window.innerWidth <= 767) {
-        this.isOnMobile = true;
-      } else {
-        this.isOnMobile = false;
-      }
-    },
-  },
-  computed: {
-    style(): string {
-      return "display: " + (this.isOnMobile ? "block" : "flex");
-    },
   },
 });
 </script> 
@@ -142,12 +122,20 @@ h2 {
   height: 32px;
 }
 
-.aboutWrapper > ul {
-  margin-bottom: 20px;
+@media (max-width: 767px) {
+  .aboutWrapper, .skillWrapper {
+    display: block;
+  }
 }
 
-.mobileView {
-  display: block;
+@media (min-width: 767px) {
+  .aboutWrapper, .skillWrapper {
+    display: flex;
+  }
+}
+
+.aboutWrapper > ul {
+  margin-bottom: 20px;
 }
 
 .aboutWrapper > img,

@@ -8,34 +8,34 @@
     <nav>
       <h2 class="hide">This is a nav area!</h2>
       <NuxtLink to="/about">
-        <div v-if="isOnMobile">
+        <div class="desktop">
           <font-awesome-layers class="fa-lg">
             <font-awesome-icon :icon="['fas', 'user']" />
           </font-awesome-layers>
         </div>
-        <div v-else>About Me</div>
+        <div class="mobile">About Me</div>
       </NuxtLink>
       <NuxtLink to="/project">
-        <div v-if="isOnMobile">
+        <div class="desktop">
           <font-awesome-layers class="fa-lg">
             <font-awesome-icon :icon="['fas', 'briefcase']" />
           </font-awesome-layers>
         </div>
-        <div v-else>Past Projects</div>
+        <div class="mobile">Past Projects</div>
       </NuxtLink>
       <NuxtLink to="/blog">
-        <div v-if="isOnMobile">
+        <div class="desktop">
           <font-awesome-layers class="fa-lg">
             <font-awesome-icon :icon="['fas', 'chart-column']" />
           </font-awesome-layers>
         </div>
-        <div v-else>ML Stuffs</div>
+        <div class="mobile">ML Stuffs</div>
       </NuxtLink>
       <NuxtLink to="/momo">
-        <div v-if="isOnMobile">
+        <div class="desktop">
           <img src="../assets/img/momo.png" alt="Momo Img" />
         </div>
-        <div v-else>Momo?</div>
+        <div class="mobile">Momo?</div>
       </NuxtLink>
     </nav>
   </header>
@@ -68,6 +68,18 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import "../assets/css/variables.scss";
+
+@media (max-width: 767px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
 
 p {
   position: relative;
