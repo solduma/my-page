@@ -7,7 +7,7 @@
       <ul>
         <li><b>University of Illinois at Urbana-Champaign</b></li>
         <br />
-        <li>M.C.S. in Data Science</li>
+        <li v-if="isOnMobile">M.C.S. in Data Science</li>
         <li>B.Sc. in Accountancy (Honor)</li>
         <li>B.Sc. in Finance (Honor)</li>
         <li>Minor in Computer Science</li>
@@ -83,7 +83,18 @@
       <p>{{ skill.type }}</p>
       <ul>
         <li v-for="link in skill.links" :key="link.alt">
-          <img :src="link.src" :alt="link.alt" />
+          <img
+            :src="
+              'https://img.shields.io/badge/-' +
+              link.alt+
+              '-' +
+              link.color +
+              '?style=for-the-badge&logo=' +
+              link.name +
+              '&logoColor=ffdd54&style=flat'
+            "
+            :alt="link.alt"
+          />
         </li>
       </ul>
     </div>
@@ -139,14 +150,20 @@ h2 {
 .aboutWrapper > img,
 ul:first-child,
 p {
-  width: 120px;
-  margin-right: 20px;
+  width: 140px;
+  margin-right: 30px;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .skillWrapper > ul {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 5px;
+  flex-shrink: 1;
+}
+
+.skillWrapper > ul > li {
+  margin-right: 3px;
 }
 </style>
