@@ -233,7 +233,7 @@
         "color": "43B02A"
       },
       {
-        "alt": "Github Badge",
+        "alt": "Github",
         "name": "github",
         "color": "181717"
       },
@@ -243,17 +243,17 @@
         "color": "232F3E"
       },
       {
-        "alt": "Spark Badge",
+        "alt": "Spark",
         "name": "apache-spark",
         "color": "E25A1C"
       },
       {
-        "alt": "Hadoop Badge",
+        "alt": "Hadoop",
         "name": "apache-hadoop",
         "color": "66CCFF"
       },
       {
-        "alt": "Qgis Badge",
+        "alt": "Qgis",
         "name": "qgis",
         "color": "589632"
       }
