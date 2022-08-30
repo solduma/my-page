@@ -1,6 +1,7 @@
-import path from 'path'
+import path, { join } from 'path'
 import fs from 'fs'
 import * as FontAwesome from './assets/js/fontawesome'
+import { faYahoo } from '@fortawesome/free-brands-svg-icons'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -9,8 +10,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'og:title', property: 'og:title', content: "Il jo Yoo | ML Engineer" },
+      { hid: 'og:url', property: 'og:url', content: "yoo.il-join.com" },
+      { hid: 'og:description', property: 'og:description', content: "ML/DL, DevOps, WebDev & beyond!" },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'theme-color', content: '#ffd35d' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
