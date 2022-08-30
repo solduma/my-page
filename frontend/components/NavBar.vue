@@ -32,10 +32,9 @@
         <div class="mobile">ML Stuffs</div>
       </NuxtLink>
       <NuxtLink to="/momo">
-        <div class="desktop">
+        <div>
           <img src="../assets/img/momo.png" alt="Momo Img" />
         </div>
-        <div class="mobile">Momo?</div>
       </NuxtLink>
     </nav>
   </header>
