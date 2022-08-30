@@ -114,6 +114,16 @@ export default defineComponent({
       skills: badges,
     };
   },
+  head: {
+    title: 'About Page',
+    meta: [
+      {
+        hid: 'about:title',
+        name: 'og:title',
+        content: "I'm a ML Engineer"
+      }
+    ],
+  }
 });
 </script> 
 
