@@ -53,9 +53,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
-    "@nuxt/content",
-    // https://i18n.nuxtjs.org/setup
-    // "@nuxtjs/i18n",
+    "@nuxt/content"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -73,20 +71,7 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
-
-  // i18n: {
-  //   locales: [
-  //     { code: "en", name: "English", file: "en.json" },
-  //     { code: "ko", name: "Korean", file: "ko.json" },
-  //   ],
-  //   defaultLocale: "en",
-  //   lazy: true,
-  //   langDir: "./locales/",
-  //   fallbackLocale: "en",
-  // },
-
-  vueI18n: {},
-
+  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {
