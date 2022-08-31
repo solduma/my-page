@@ -27,10 +27,10 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@nuxt/content",
       "@types/node",
-      "@nuxtjs/i18n"
-    ]
+      "@pinia/nuxt"
+    ],
+    "jsx": "preserve"
   },
   "exclude": [
     "node_modules",

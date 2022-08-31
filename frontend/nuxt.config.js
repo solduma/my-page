@@ -1,6 +1,6 @@
 import path, { join } from "path";
 import fs from "fs";
-import * as FontAwesome from "./assets/js/fontawesome";
+import * as FontAwesome from "./plugins/fontawesome";
 import { faYahoo } from "@fortawesome/free-brands-svg-icons";
 
 export default {
@@ -37,7 +37,11 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/fontawesome", "@nuxt/typescript-build"],
+  buildModules: [
+    "@nuxtjs/fontawesome",
+    "@nuxt/typescript-build",
+    "@nuxtjs/composition-api/module",
+  ],
   fontawesome: {
     icons: {
       solid: FontAwesome.solid,
@@ -52,8 +56,7 @@ export default {
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
-    // https://go.nuxtjs.dev/content
-    "@nuxt/content"
+    "@pinia/nuxt",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -69,9 +72,6 @@ export default {
     },
   },
 
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-  
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {

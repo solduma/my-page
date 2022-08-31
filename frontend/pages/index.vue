@@ -14,9 +14,21 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+// import { useLangStore } from "@/stores/index";
 
 export default defineComponent({
-  layout: 'MainLayout'
+  layout: "MainLayout",
+  // asyncData({ $pinia }) {
+  //   const store = useLangStore($pinia)
+  //   console.log(store);
+  // },
+  mounted() {
+    if (process.browser) {
+      console.log(
+        (window.navigator.language || window.navigator.languages)
+      );
+    }
+  },
 });
 </script>
 
@@ -39,5 +51,4 @@ p > a {
   line-height: 32 px;
   text-decoration: none;
 }
-
 </style>

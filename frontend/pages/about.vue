@@ -7,12 +7,12 @@
       <ul>
         <li><b>University of Illinois at Urbana-Champaign</b></li>
         <br />
-        <li v-if="isOnMobile">M.C.S. in Data Science</li>
-        <li v-else>Master of Computer Science in Data Science</li>
-        <li v-if="isOnMobile">B.Sc. in Accountancy (Honor)</li>
-        <li v-else>Bachelor of Science in Accountancy (Honor)</li>
-        <li v-if="isOnMobile">B.Sc. in Finance (Honor)</li>
-        <li v-else>Bachelor of Science in Finance (Honor)</li>
+        <li class="onMobile">M.C.S. in Data Science</li>
+        <li class="onPC">Master of Computer Science in Data Science</li>
+        <li class="onMobile">B.Sc. in Accountancy (Honor)</li>
+        <li class="onPC">Bachelor of Science in Accountancy (Honor)</li>
+        <li class="onMobile">B.Sc. in Finance (Honor)</li>
+        <li class="onPC">Bachelor of Science in Finance (Honor)</li>
         <li>Minor in Computer Science</li>
       </ul>
     </div>
@@ -77,18 +77,14 @@
     <br />
     <h2>Skills</h2>
     <br />
-    <div
-      v-for="skill in skills"
-      :key="skill.type"
-      class="skillWrapper"
-    >
+    <div v-for="skill in skills" :key="skill.type" class="skillWrapper">
       <p>{{ skill.type }}</p>
       <ul>
         <li v-for="link in skill.links" :key="link.alt">
           <img
             :src="
               'https://img.shields.io/badge/-' +
-              link.alt+
+              link.alt +
               '-' +
               link.color +
               '?style=for-the-badge&logo=' +
@@ -115,17 +111,17 @@ export default defineComponent({
     };
   },
   head: {
-    title: 'About Page',
+    title: "About Page",
     meta: [
       {
-        hid: 'about:title',
-        name: 'og:title',
-        content: "I'm a ML Engineer"
-      }
+        hid: "about:title",
+        name: "og:title",
+        content: "I'm a ML Engineer",
+      },
     ],
-  }
+  },
 });
-</script> 
+</script>
 
 <style scoped lang="scss">
 h2 {
@@ -136,12 +132,19 @@ h2 {
   .aboutWrapper, .skillWrapper {
     display: block;
   }
+  .onPC{
+    display: none;
+  }
 }
 
 @media (min-width: 767px) {
-  .aboutWrapper, .skillWrapper {
+  .aboutWrapper, .skillWrapper, .isOnMobile {
     display: flex;
   }
+  .onMobile{
+    display: none;
+  }
+
 }
 
 .aboutWrapper > ul {

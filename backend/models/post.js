@@ -1,3 +1,4 @@
+const autoIdSetter = require("../utils/auto-id-setter");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -25,7 +26,10 @@ let Postings = new Schema({
 
 let Post = new Schema(
   {
-    path: {
+    lang: {
+      type: String,
+    },
+    category: {
       type: String,
     },
     post_no: {
