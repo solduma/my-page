@@ -18,16 +18,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   layout: "MainLayout",
-  // asyncData({ $pinia }) {
-  //   const store = useLangStore($pinia)
-  //   console.log(store);
-  // },
-  mounted() {
-    if (process.browser) {
-      console.log(
-        (window.navigator.language || window.navigator.languages)
-      );
-    }
+  data() {
   },
 });
 </script>

@@ -56,15 +56,26 @@ export default {
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
-    "@pinia/nuxt",
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: "/",
+    proxy: true, // proxy 사용
   },
 
+  proxy: {
+    "/api": {
+      // target: `https://${domain}`,
+      target: `http://localhost:3000`,
+      changeOrigin: true,
+      pathRewrite: {
+        "^/api": "",
+      },
+    },
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
