@@ -14,7 +14,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import { useLangStore } from "@/stores/index";
+  import { storeToRefs } from 'pinia'
+  import { useStore } from '../store/index'
 
 export default defineComponent({
   layout: "MainLayout",

@@ -1,10 +1,6 @@
-import path, { join } from "path";
-import fs from "fs";
 import * as FontAwesome from "./plugins/fontawesome";
-import { faYahoo } from "@fortawesome/free-brands-svg-icons";
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Il jo Yoo | ML Engineer",
     meta: [
@@ -27,16 +23,12 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.scss"],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     "@nuxtjs/fontawesome",
     "@nuxt/typescript-build",
@@ -51,22 +43,18 @@ export default {
     },
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/pwa"
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: "/",
-    proxy: true, // proxy 사용
+    proxy: true, 
   },
 
   proxy: {
     "/api": {
-      // target: `https://${domain}`,
       target: `http://localhost:3000`,
       changeOrigin: true,
       pathRewrite: {
@@ -74,14 +62,13 @@ export default {
       },
     },
   },
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
+
   pwa: {
     manifest: {
       lang: "en",
     },
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {
     port: 4002,

@@ -1,13 +1,13 @@
-const solid = [
+const solid: string[] = [
   'faEnvelope',
   'faUser',
   'faBriefcase',
   'faChartColumn',
 ]
 
-const regular = []
+const regular: string[] = []
 
-const brands = [
+const brands: string[] = [
   'faGithub',
   'faLinkedin']
 

@@ -36,12 +36,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import { useLanguageStore } from '@/store/language'
 
 export default defineComponent({
   name: "Footer",
-  mounted() {
-    if (process.client && !localStorage.getItem("lang")) {
+  beforeMount() {
+    console.log("Refreshed")
+    if (!localStorage.getItem("lang")) {
       localStorage.setItem(
         "lang",
         (document.getElementById("language-toggle") as HTMLInputElement)
@@ -49,14 +49,19 @@ export default defineComponent({
           ? "kr"
           : "en"
       );
+    } else if (localStorage.getItem("lang") === "en") {
+      (document.getElementById("language-toggle") as HTMLInputElement)
+          .checked = true
     } else {
-      localStorage.setItem("lang", "en");
+      (document.getElementById("language-toggle") as HTMLInputElement)
+          .checked = false
     }
   },
   methods: {
     switchLang() {
       let lang = localStorage.getItem("lang");
       localStorage.setItem("lang", lang === "en" ? "kr" : "en");
+      this.$nuxt.refresh()
     },
   },
 });
@@ -115,7 +120,7 @@ input.check-toggle-round-flat:checked ~ .off {
 }
 
 input.check-toggle-round-flat:checked ~ .on {
-  color: white;
+  color: black;
 }
 
 .switch > span.on {
