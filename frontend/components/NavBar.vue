@@ -44,24 +44,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  data() {
-    return {
-      isOnMobile: false,
-    };
-  },
-  mounted() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize);
-  },
-  methods: {
-    onResize() {
-      if (window.innerWidth <= 767) {
-        this.isOnMobile = true;
-      } else {
-        this.isOnMobile = false;
-      }
-    },
-  },
 });
 </script>
 

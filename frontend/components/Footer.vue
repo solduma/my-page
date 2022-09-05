@@ -1,47 +1,49 @@
 <template>
-  <div>
-    <br />
-    <hr />
-    <div id="footerWrapper">
-      <div>
-        <a href="https://github.com/solduma/" aria-label="Github">
-          <font-awesome-layers class="fa-2x">
-            <font-awesome-icon :icon="['fab', 'github']" />
-          </font-awesome-layers>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/il-jo-yoo-58034720/"
-          aria-label="LinkedIn"
-        >
-          <font-awesome-layers class="fa-2x">
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
-          </font-awesome-layers>
-        </a>
-        <a href="mailto: iljo.joseph.yoo@gmail.com" aria-label="Email">
-          <font-awesome-layers class="fa-2x">
-            <font-awesome-icon :icon="['fas', 'envelope']" />
-          </font-awesome-layers>
-        </a>
-      </div>
-      <div class="switch">
-        <input
-          id="language-toggle"
-          class="check-toggle check-toggle-round-flat"
-          type="checkbox"
-        />
-        <label for="language-toggle"></label>
-        <span class="on">KR</span>
-        <span class="off">EN</span>
-      </div>
+  <footer id="footerWrapper">
+    <div>
+      <a href="https://github.com/solduma/" aria-label="Github">
+        <font-awesome-layers class="fa-2x">
+          <font-awesome-icon :icon="['fab', 'github']" />
+        </font-awesome-layers>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/il-jo-yoo-58034720/"
+        aria-label="LinkedIn"
+      >
+        <font-awesome-layers class="fa-2x">
+          <font-awesome-icon :icon="['fab', 'linkedin']" />
+        </font-awesome-layers>
+      </a>
+      <a href="mailto: iljo.joseph.yoo@gmail.com" aria-label="Email">
+        <font-awesome-layers class="fa-2x">
+          <font-awesome-icon :icon="['fas', 'envelope']" />
+        </font-awesome-layers>
+      </a>
     </div>
-  </div>
+    <div class="switch">
+      <input
+        id="language-toggle"
+        class="check-toggle check-toggle-round-flat"
+        type="checkbox"
+      />
+      <label for="language-toggle"></label>
+      <span class="on">KR</span>
+      <span class="off">EN</span>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// document.getElementById("language-toggle").value;
+// import { useLanguageStore } from '@/store/language'
+
 export default defineComponent({
   name: "Footer",
+  // data() {
+  //   return {
+  //     store: useLanguageStore()
+  //   }
+  // },
   mounted() {
     if (process.browser && !this.$auth.$storage.getLocalStorage("lang")) {
       this.$auth.$storage.setLocalStorage(
@@ -62,16 +64,31 @@ export default defineComponent({
 @import "../assets/css/variables.scss";
 
 #footerWrapper {
+  position: fixed;
+  bottom: 0;
   display: flex;
+  flex-flow: row-wrap;
   justify-content: space-between;
+  min-width: 100vw;
+  background-color: $BumbleBeeYellow;
+  padding: 2px;
+}
+
+footer > div:first-child {
+  display: flex;  
+  justify-content: space-between;
+  min-width: 125px;
 }
 
 a {
   // color: $BumbleBeeYellow;
-  color: rgb(95, 95, 95);
   position: relative;
+  display: inline-flex;
   margin-right: 5px;
+  align-items: center;
+  color: rgb(0, 0, 0);
 }
+
 
 .switch {
   position: relative;

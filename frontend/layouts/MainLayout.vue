@@ -7,8 +7,8 @@
         <div class="viewWrapper">
           <Nuxt />
         </div>
-        <Footer />
       </main>
     </div>
+    <Footer />
   </div>
 </template>
