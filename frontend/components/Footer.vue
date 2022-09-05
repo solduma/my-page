@@ -25,6 +25,7 @@
         id="language-toggle"
         class="check-toggle check-toggle-round-flat"
         type="checkbox"
+        @click="switchLang"
       />
       <label for="language-toggle"></label>
       <span class="on">KR</span>
@@ -39,23 +40,24 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Footer",
-  // data() {
-  //   return {
-  //     store: useLanguageStore()
-  //   }
-  // },
   mounted() {
-    if (process.browser && !this.$auth.$storage.getLocalStorage("lang")) {
-      this.$auth.$storage.setLocalStorage(
+    if (process.client && !localStorage.getItem("lang")) {
+      localStorage.setItem(
         "lang",
         (document.getElementById("language-toggle") as HTMLInputElement)
-          .value == "on"
+          .value === "on"
           ? "kr"
           : "en"
       );
     } else {
-      this.$auth.$storage.setLocalStorage("lang", "en");
+      localStorage.setItem("lang", "en");
     }
+  },
+  methods: {
+    switchLang() {
+      let lang = localStorage.getItem("lang");
+      localStorage.setItem("lang", lang === "en" ? "kr" : "en");
+    },
   },
 });
 </script>
@@ -75,7 +77,7 @@ export default defineComponent({
 }
 
 footer > div:first-child {
-  display: flex;  
+  display: flex;
   justify-content: space-between;
   min-width: 125px;
 }
@@ -88,7 +90,6 @@ a {
   align-items: center;
   color: rgb(0, 0, 0);
 }
-
 
 .switch {
   position: relative;
@@ -114,7 +115,7 @@ input.check-toggle-round-flat:checked ~ .off {
 }
 
 input.check-toggle-round-flat:checked ~ .on {
-  color: $BumbleBeeYellow;
+  color: white;
 }
 
 .switch > span.on {
@@ -126,7 +127,7 @@ input.check-toggle-round-flat:checked ~ .on {
 .switch > span.off {
   right: 0;
   padding-right: 4px;
-  color: white;
+  color: black;
 }
 
 .check-toggle {
@@ -168,7 +169,7 @@ input.check-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: $BumbleBeeYellow;
+  background-color: white;
 
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
@@ -180,7 +181,7 @@ input.check-toggle-round-flat + label:after {
   left: 4px;
   bottom: 4px;
   width: 48px;
-  background-color: #fff;
+  background-color: $BumbleBeeYellow;
   -webkit-border-radius: 52px;
   -moz-border-radius: 52px;
   -ms-border-radius: 52px;
