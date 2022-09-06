@@ -18,7 +18,9 @@ import { useLang } from "@/stores/lang";
 
 
 export default defineComponent({
-  layout: "MainLayout",
+  layout(context) {
+    return "MainLayout";
+  },
 });
 </script>
 

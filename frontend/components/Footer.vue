@@ -25,7 +25,7 @@
         id="language-toggle"
         class="check-toggle check-toggle-round-flat"
         type="checkbox"
-        @click="switchLang"
+        @click="lang.switchLang()"
       />
       <label for="language-toggle"></label>
       <span class="on">KR</span>
@@ -37,34 +37,36 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useLang } from "@/stores/lang";
+import { onBeforeMount } from "vue";
 
 export default defineComponent({
-  beforeMount() {
-    if (!localStorage.getItem("lang")) {
-      localStorage.setItem(
-        "lang",
-        (document.getElementById("language-toggle") as HTMLInputElement)
-          .value === "on"
-          ? "kr"
-          : "en"
-      );
-    } else if (localStorage.getItem("lang") === "en") {
-      (document.getElementById("language-toggle") as HTMLInputElement).checked =
-        true;
-    } else {
-      (document.getElementById("language-toggle") as HTMLInputElement).checked =
-        false;
+  setup() {
+    const lang = useLang();
 
-      const langStore = useLang();
-      langStore.setLang(localStorage.getItem("lang"));
-    }
-  },
-  methods: {
-    switchLang() {
-      let lang = localStorage.getItem("lang");
-      localStorage.setItem("lang", lang === "en" ? "kr" : "en");
-      // langStore.switchLang();
-    },
+    onBeforeMount(() => {
+      if (!localStorage.getItem("lang")) {
+        localStorage.setItem(
+          "lang",
+          (document.getElementById("language-toggle") as HTMLInputElement)
+            .checked === false
+            ? "kr"
+            : "en"
+        );
+      } else if (localStorage.getItem("lang") === "en") {
+        (
+          document.getElementById("language-toggle") as HTMLInputElement
+        ).checked = true;
+      } else {
+        (
+          document.getElementById("language-toggle") as HTMLInputElement
+        ).checked = false;
+      }
+      lang.setLang(localStorage.getItem("lang"));
+    });
+
+    return {
+      lang
+    };
   },
 });
 </script>

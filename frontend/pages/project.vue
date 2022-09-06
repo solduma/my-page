@@ -6,6 +6,8 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  layout: 'MainLayout'
+  layout(context) {
+    return "MainLayout";
+  },
 });
 </script>

@@ -104,21 +104,13 @@ import { defineComponent } from "vue";
 import badges from "../assets/json/badges.json";
 
 export default defineComponent({
-  layout: "MainLayout",
+  layout(context) {
+    return "MainLayout";
+  },
   data() {
     return {
       skills: badges,
     };
-  },
-  head: {
-    title: "About Page",
-    meta: [
-      {
-        hid: "about:title",
-        name: "og:title",
-        content: "I'm a ML Engineer",
-      },
-    ],
   },
 });
 </script>
@@ -129,22 +121,24 @@ h2 {
 }
 
 @media (max-width: 767px) {
-  .aboutWrapper, .skillWrapper {
+  .aboutWrapper,
+  .skillWrapper {
     display: block;
   }
-  .onPC{
+  .onPC {
     display: none;
   }
 }
 
 @media (min-width: 767px) {
-  .aboutWrapper, .skillWrapper, .isOnMobile {
+  .aboutWrapper,
+  .skillWrapper,
+  .isOnMobile {
     display: flex;
   }
-  .onMobile{
+  .onMobile {
     display: none;
   }
-
 }
 
 .aboutWrapper > ul {
