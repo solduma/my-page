@@ -36,11 +36,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useLang } from "@/stores/lang";
 
 export default defineComponent({
-  name: "Footer",
   beforeMount() {
-    console.log("Refreshed")
     if (!localStorage.getItem("lang")) {
       localStorage.setItem(
         "lang",
@@ -50,18 +49,21 @@ export default defineComponent({
           : "en"
       );
     } else if (localStorage.getItem("lang") === "en") {
-      (document.getElementById("language-toggle") as HTMLInputElement)
-          .checked = true
+      (document.getElementById("language-toggle") as HTMLInputElement).checked =
+        true;
     } else {
-      (document.getElementById("language-toggle") as HTMLInputElement)
-          .checked = false
+      (document.getElementById("language-toggle") as HTMLInputElement).checked =
+        false;
+
+      const langStore = useLang();
+      langStore.setLang(localStorage.getItem("lang"));
     }
   },
   methods: {
     switchLang() {
       let lang = localStorage.getItem("lang");
       localStorage.setItem("lang", lang === "en" ? "kr" : "en");
-      this.$nuxt.refresh()
+      // langStore.switchLang();
     },
   },
 });

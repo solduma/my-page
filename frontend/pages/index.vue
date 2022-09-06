@@ -14,8 +14,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-  import { storeToRefs } from 'pinia'
-  import { useStore } from '../store/index'
+import { useLang } from "@/stores/lang";
+
 
 export default defineComponent({
   layout: "MainLayout",
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "../assets/css/variables.scss";
+@import "@/assets/css/variables.scss";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
 
