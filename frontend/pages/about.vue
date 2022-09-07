@@ -104,9 +104,6 @@ import { defineComponent } from "vue";
 import badges from "../assets/json/badges.json";
 
 export default defineComponent({
-  layout(context) {
-    return "MainLayout";
-  },
   data() {
     return {
       skills: badges,
