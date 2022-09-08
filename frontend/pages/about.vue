@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "@nuxtjs/composition-api";
 import badges from "../assets/json/badges.json";
 import { useLang } from "@/stores/lang";
 import content from "@/content/about";

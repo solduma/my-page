@@ -35,9 +35,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onBeforeMount } from "@nuxtjs/composition-api";
 import { useLang } from "@/stores/lang";
-import { onBeforeMount } from "vue";
 
 export default defineComponent({
   setup() {
@@ -65,7 +64,7 @@ export default defineComponent({
     });
 
     return {
-      lang
+      lang,
     };
   },
 });

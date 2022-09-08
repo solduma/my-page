@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "@nuxtjs/composition-api";
 import { useLang } from "@/stores/lang";
 import content from "@/content/momo";
 

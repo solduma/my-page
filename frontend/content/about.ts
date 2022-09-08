@@ -113,7 +113,7 @@ foo["kr"] = `
     <li>2021-현재</li>
   </ul>
   <ul>
-    <li><b>현대캐피탈 – 시니어 데이터 과학자, 데이터사이언스 팀 </b></li>
+    <li><b>현대캐피탈 – 시니어 데이터 과학자, 데이터사이언스팀 </b></li>
     <li>외부채널 배너 추천모델 개발 및 최적화</li>
     <li>GTM-GA4-BigQuery 도입 및 실무 적용</li>
   </ul>
@@ -124,7 +124,7 @@ foo["kr"] = `
   </ul>
   <ul>
     <li>
-      <b>EY 컨설팅 – 시니어 컨설턴트, DATA &amp; ANALYTICS 팀</b>
+      <b>EY 컨설팅 – 시니어 컨설턴트, DATA &amp; ANALYTICS팀</b>
     </li>
     <li>삼성전자 – E2E 글로벌 Sellouts 관제 솔루션 개발</li>
     <li>삼성전자 – 플래그쉽 휴대폰 Sellout SARIMAX 예측 모델 개발</li>
@@ -141,7 +141,7 @@ foo["kr"] = `
     <li>2014-2017</li>
   </ul>
   <ul>
-    <li><b>한화케미칼 – 매니저, 재무회계 팀</b></li>
+    <li><b>한화케미칼 – 매니저, 재무회계팀</b></li>
     <li>재무제표 공시 및 주석 입력 자동화</li>
     <li>무형자산, 금융자산 공정가치 평가 프로세스 수립</li>
   </ul>
@@ -162,7 +162,7 @@ foo["kr"] = `
 <h2>기술 사항</h2>
 <br />
 <div class="skillWrapper">
-  <p>자격증</p>
+  <p>License</p>
   <ul>
   <li>모든 CFA 시험 통과</li>
   </ul>
