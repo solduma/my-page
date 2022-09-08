@@ -28,7 +28,16 @@ export default defineComponent({
   flex-flow: column;
   align-content: center;
 }
-.momowWrapper > h1 > a > img {
-  width: 400px;
+
+@media (max-width: 767px) {
+  .momowWrapper > h1 > a > img {
+    width: 280px;
+  }
+}
+
+@media (min-width: 767px) {
+  .momowWrapper > h1 > a > img {
+    width: 400px;
+  }
 }
 </style>

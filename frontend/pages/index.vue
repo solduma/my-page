@@ -20,7 +20,7 @@ export default defineComponent({
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
 @import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
 
-ul > li {
+::v-deep ul > li {
   display: flex;
   margin-right: 3px;
   margin-bottom: 3px;
@@ -28,7 +28,7 @@ ul > li {
   flex-flow: row wrap;
 }
 
-p > a {
+::v-deep p > a {
   color: $MomoGrotto;
   font-weight: bold;
   line-height: 32 px;
