@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header :class="{ 'navbar--hidden': !showNavbar }">
     <h1>
       <NuxtLink to="/">
-        <img src="../assets/img/logo.png" alt="Main Logo" />
+        <img src="img/logo.png" alt="Main Logo" />
       </NuxtLink>
     </h1>
     <nav>
@@ -33,7 +33,7 @@
       </NuxtLink>
       <NuxtLink to="/momo">
         <div>
-          <img src="../assets/img/momo.png" alt="Momo Img" />
+          <img src="img/momo.png" alt="Momo Img" />
         </div>
       </NuxtLink>
     </nav>
@@ -41,9 +41,34 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+} from "@nuxtjs/composition-api";
 
 export default defineComponent({
+  setup() {
+    const showNavbar = ref(true);
+    const lastScrollPosition = ref(0);
+    function onScroll() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollPosition < 0) {
+        return;
+      }
+      showNavbar.value = currentScrollPosition < lastScrollPosition.value;
+      lastScrollPosition.value = currentScrollPosition;
+    }
+    onMounted(() => {
+      window.addEventListener("scroll", onScroll);
+    });
+    onBeforeUnmount(() => {
+      window.removeEventListener("scroll", onScroll);
+    });
+    return { showNavbar };
+  },
 });
 </script>
 
@@ -77,6 +102,12 @@ header {
   min-width: 100vw;
   background: $BumbleBeeYellow;
   margin: 0px;
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s all ease-out;
+}
+.navbar.navbar--hidden {
+  box-shadow: none;
+  transform: translate3d(0, -100%, 0);
 }
 
 header a {

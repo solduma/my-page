@@ -20,7 +20,8 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node",
-      "@pinia/nuxt"
+      "@pinia/nuxt",
+      "@nuxt/content"
     ],
     "jsx": "preserve"
   },

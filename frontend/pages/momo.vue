@@ -2,22 +2,23 @@
   <div class="momowWrapper">
     <h1>
       <a href="https://momo.town" aria-label="Momo"
-        ><img src="../assets/img/momologo.png" alt="Momo Link"
+        ><img src="img/momologo.png" alt="Momo Link"
       /></a>
     </h1>
-    <p>
-      Momo aims to become the greatest Mobility Community. <br />
-      It's in an open beta state, but you can sign-up, post your ideas, or share funny memes. <br/>
-      I intend to keep a Dev Journal on this page to share my story about full-stack web and DevOps development. <br/>
-      Any thoughts are welcome, especially if you are interested in joining the team Momo!
-    </p>
+    <p v-html="content[lang.lang]"></p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useLang } from "@/stores/lang";
+import content from "@/content/momo";
 
 export default defineComponent({
+  setup() {
+    const lang = useLang();
+    return { content, lang };
+  },
 });
 </script>
 
