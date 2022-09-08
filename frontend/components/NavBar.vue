@@ -13,7 +13,7 @@
             <font-awesome-icon :icon="['fas', 'user']" />
           </font-awesome-layers>
         </div>
-        <div class="mobile">About Me</div>
+        <div class="mobile">About</div>
       </NuxtLink>
       <NuxtLink to="/project">
         <div class="desktop">
@@ -21,7 +21,7 @@
             <font-awesome-icon :icon="['fas', 'briefcase']" />
           </font-awesome-layers>
         </div>
-        <div class="mobile">Past Projects</div>
+        <div class="mobile">Projects</div>
       </NuxtLink>
       <NuxtLink to="/blog">
         <div class="desktop">
@@ -29,7 +29,7 @@
             <font-awesome-icon :icon="['fas', 'chart-column']" />
           </font-awesome-layers>
         </div>
-        <div class="mobile">ML Stuffs</div>
+        <div class="mobile">Blog</div>
       </NuxtLink>
       <NuxtLink to="/momo">
         <div>
