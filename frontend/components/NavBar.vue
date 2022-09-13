@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'navbar--hidden': !showNavbar }">
+  <header class="navbar" :class="{ 'navbar--hidden': !showNavbar }">
     <h1>
       <NuxtLink to="/">
         <img src="img/logo.png" alt="Main Logo" />
@@ -21,7 +21,7 @@
             <font-awesome-icon :icon="['fas', 'briefcase']" />
           </font-awesome-layers>
         </div>
-        <div class="mobile">Projects</div>
+        <div class="mobile">Project</div>
       </NuxtLink>
       <NuxtLink to="/blog">
         <div class="desktop">
@@ -58,6 +58,9 @@ export default defineComponent({
       if (currentScrollPosition < 0) {
         return;
       }
+      if (Math.abs(currentScrollPosition - lastScrollPosition.value) < 60) {
+        return;
+      }
       showNavbar.value = currentScrollPosition < lastScrollPosition.value;
       lastScrollPosition.value = currentScrollPosition;
     }
@@ -67,7 +70,7 @@ export default defineComponent({
     onBeforeUnmount(() => {
       window.removeEventListener("scroll", onScroll);
     });
-    return { showNavbar };
+    return { showNavbar: true, lastScrollPosition: 0 };
   },
 });
 </script>
