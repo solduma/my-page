@@ -9,7 +9,7 @@ export default {
       {
         hid: "og:title",
         property: "og:title",
-        content: "Il jo Yoo | ML Scientist",
+        content: "Il jo Yoo | Data Scientist",
       },
       { hid: "og:url", property: "og:url", content: "yoo.il-jo.com" },
       {
