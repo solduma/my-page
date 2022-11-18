@@ -11,11 +11,11 @@ export default {
         property: "og:title",
         content: "Il jo Yoo | Data Scientist",
       },
-      { hid: "og:url", property: "og:url", content: "yoo.il-join.com" },
+      { hid: "og:url", property: "og:url", content: "yoo.il-jo.com" },
       {
         hid: "og:description",
         property: "og:description",
-        content: "ML/DL, DevOps, WebDev & beyond!",
+        content: "Data Science, Machine Learning, Deep Learning, MLOps, DevOps, WebDev & beyond!",
       },
       { name: "format-detection", content: "telephone=no" },
       { name: "theme-color", content: "#ffd35d" },
