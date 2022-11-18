@@ -2,14 +2,14 @@ import * as FontAwesome from "./plugins/fontawesome";
 
 export default {
   head: {
-    title: "Il jo Yoo | ML Engineer",
+    title: "Il jo Yoo | Data Scientist",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "og:title",
         property: "og:title",
-        content: "Il jo Yoo | ML Engineer",
+        content: "Il jo Yoo | Data Scientist",
       },
       { hid: "og:url", property: "og:url", content: "yoo.il-join.com" },
       {
